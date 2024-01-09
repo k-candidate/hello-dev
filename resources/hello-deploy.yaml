@@ -20,4 +20,8 @@ spec:
         image: kcandidate/hello:1.0.0
         ports:
         - containerPort: 80
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 25%
 
