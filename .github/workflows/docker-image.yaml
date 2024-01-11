@@ -45,5 +45,5 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ steps.metadata.outputs.tags }}
+          tags: registry.hub.docker.com/${{ env.IMG_NAME }}:${{ steps.metadata.outputs.tags }}
           labels: ${{ steps.metadata.outputs.labels }}
