@@ -26,4 +26,4 @@ git push
 - If you deem this version stable, and decide to upgrade prod, then simply change the image tag in https://github.com/k-candidate/hello-prod/blob/main/resources/hello-deploy.yaml and ArgoCD will take care of deploying the new image to prod.
 
 ## Possible Improvements:
-- [ ] Use `trivy` to scan the image for vulnerabilities.
+- [x] Use `trivy` to scan the image for vulnerabilities and upload results to Security tab.
