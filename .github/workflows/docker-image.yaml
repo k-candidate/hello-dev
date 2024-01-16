@@ -10,6 +10,8 @@ on:
       - '*'
 jobs:
   trivy-scan:
+    permissions:
+      security-events: write
     name: scan image with trivy
     runs-on: ubuntu-latest
     env:
