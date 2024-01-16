@@ -21,7 +21,7 @@ jobs:
       - name: build local container
         uses: docker/build-push-action@v2
         with:
-          tags: ${{ IMG_NAME }}:${{ github.sha }}
+          tags: ${{ env.IMG_NAME }}:${{ github.sha }}
           push: false
           load: true
 
