@@ -27,3 +27,4 @@ git push
 
 ## Possible Improvements:
 - [x] Use `trivy` to scan the image for vulnerabilities and upload results to Security tab.
+- [ ] Add Autoscaling using KEDA.
