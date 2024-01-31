@@ -1,12 +1,12 @@
 apiVersion: keda.sh/v1alpha1
 kind: ScaledObject
 metadata:
-  name: scaling-hello-dev
+  name: cron-scaling-hello-dev
 spec:
   scaleTargetRef:
     name: deployment-hello-dev
     kind: Deployment
-  minReplicaCount: 1
+  minReplicaCount: 0
   maxReplicaCount: 2
   pollingInterval: 30
   cooldownPeriod:  30
@@ -18,3 +18,19 @@ spec:
       start: 00 08 * * 1-5
       end: 00 18 * * 1-5
       desiredReplicas: "1"
+---
+kind: HTTPScaledObject
+apiVersion: http.keda.sh/v1alpha1
+metadata:
+    name: http-scaling-hello-dev
+spec:
+    host: "hello-dev.kcan.io"
+    targetPendingRequests: 5
+    scaledownPeriod: 30
+    scaleTargetRef:
+        deployment: deployment-hello-dev
+        service: service-hello-dev
+        port: 8080
+    replicas:
+        min: 0
+        max: 2
