@@ -24,7 +24,8 @@ apiVersion: http.keda.sh/v1alpha1
 metadata:
     name: http-scaling-hello-dev
 spec:
-    host: hello-dev.kcan.io
+    hosts: 
+      - hello-dev.kcan.io
     targetPendingRequests: 2
     scaledownPeriod: 30
     scaleTargetRef:
