@@ -25,12 +25,12 @@ metadata:
     name: http-scaling-hello-dev
 spec:
     host: "hello-dev.kcan.io"
-    targetPendingRequests: 5
+    targetPendingRequests: 2
     scaledownPeriod: 30
     scaleTargetRef:
         deployment: deployment-hello-dev
         service: service-hello-dev
         port: 8080
     replicas:
-        min: 0
-        max: 2
+        min: 1
+        max: 4
