@@ -11,6 +11,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: keda-add-ons-http-interceptor-proxy
+            name: service-hello-dev
             port:
               number: 8080
